@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Background Changer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> </head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-3">Background Changer</h1>
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h2>Live Video</h2>
+                <img src="{{ url_for('video_feed') }}" class="img-fluid"> 
+            </div>
+
+            <div class="col-md-4">
+                <h2>Background Options</h2>
+
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="background_image">Upload Background Image:</label>
+                        <input type="file" class="form-control-file" id="background_image" name="background_image">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Set Background</button>
+                </form>
+
+                <hr>
+
+                <!-- (Optional) Add a section to select from existing backgrounds -->
+                <h3>Existing Backgrounds:</h3>
+                <form method="post">
+                    <select class="form-control" name="background_image_select">
+                        <option value="path/to/background1.jpg">Background 1</option>
+                        <option value="path/to/background2.png">Background 2</option>
+                        </select>
+                    <button type="submit" class="btn btn-secondary mt-2">Select Background</button>
+                </form>
+            </div> 
+        </div> 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
